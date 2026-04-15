@@ -1,0 +1,4 @@
+com\uniMelb\XESConverter\components\AppComponent.class
+com\uniMelb\XESConverter\CustomCommanLineRunner.class
+com\uniMelb\XESConverter\Application.class
+com\uniMelb\XESConverter\entities\Event.class
