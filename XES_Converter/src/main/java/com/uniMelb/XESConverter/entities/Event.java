@@ -14,11 +14,29 @@ public class Event {
     private long outTime;
     private int callingOrder;
     private int deptOfCallingStack;
-    private String formattedDate;
+    private String formattedDate ="";
     private int integerId;
 
+    private String methodName;
+    private String methodId;
+    private String timeStamp="";
+    private String transactionType;
+    private String instance;
+    private String returnType;
+    private String inputParameters;
+    private boolean isConstructor;
+    private boolean isNested;
+    private String sourceLocation;
+    private String packageName;
+    private String threadId;
+    private String callerInstance;
+    private String callerMethod;
+    private String userId;
+    private long duration;
+    
     public Event() {
     }
+
 
 
     public void setSequenceId(long sequenceId) {
@@ -46,7 +64,12 @@ public class Event {
         this.deptOfCallingStack = deptOfCallingStack;
     }
     public long getSequenceId() {
-        return sequenceId;
+        if (sequenceId > 0) {
+            return sequenceId;
+        } else {
+            return System.currentTimeMillis();
+        }
+       
     }
     public String getMethodSignature() {
         return methodSignature;
@@ -75,7 +98,12 @@ public class Event {
     }
 
     public String getFormattedDate() {
-        return formattedDate;
+        if (formattedDate != null || !formattedDate.equals("")) {
+            return formattedDate;
+        } else {
+            return timeStamp;
+        }
+        
     }
 
     public double getMethodDuration() {
@@ -83,15 +111,17 @@ public class Event {
         if(this.inTime > 0 & this.outTime > 0) {
             return Double.parseDouble("" + (this.outTime - this.inTime));
         }
-        return 0;
+        return duration;
     }
 
     public String methodName() {
         if (this.methodSignature != null) {
             int methodIndex = methodSignature.split(" ").length-1;
             return this.methodSignature.split(" ")[methodIndex];
+        } else {
+            return methodName;
         }
-        return "";
+        
     }
     public String shortMethodName() {
         if (this.methodSignature != null) {
@@ -143,6 +173,130 @@ public class Event {
         this.integerId = integerId;
     }
 
-    
+    public String getMethodName() {
+        return methodName;
+    }
+
+    public void setMethodName(String methodName) {
+        this.methodName = methodName;
+    }
+
+    public String getTimeStamp() {
+        return timeStamp;
+    }
+
+    public void setTimeStamp(String timeStamp) {
+        this.timeStamp = timeStamp;
+    }
+
+    public String getTransactionType() {
+        if (transactionType != null && !("").equals(transactionType)) {
+            return transactionType;
+        } else {
+            return "complete";
+        }
+        
+    }
+
+    public void setTransactionType(String transactionType) {
+        this.transactionType = transactionType;
+    }
+
+    public String getInstance() {
+        return instance;
+    }
+
+    public void setInstance(String instance) {
+        this.instance = instance;
+    }
+
+    public String getReturnType() {
+        return returnType;
+    }
+
+    public void setReturnType(String returnType) {
+        this.returnType = returnType;
+    }
+
+    public String getInputParameters() {
+        return inputParameters;
+    }
+
+    public void setInputParameters(String inputParameters) {
+        this.inputParameters = inputParameters;
+    }
+
+    public boolean isIsConstructor() {
+        return isConstructor;
+    }
+
+    public void setIsConstructor(boolean isConstructor) {
+        this.isConstructor = isConstructor;
+    }
+
+    public boolean isIsNested() {
+        return isNested;
+    }
+
+    public void setIsNested(boolean isNested) {
+        this.isNested = isNested;
+    }
+
+
+    public String getSourceLocation() {
+        return sourceLocation;
+    }
+
+    public void setSourceLocation(String sourceLocation) {
+        this.sourceLocation = sourceLocation;
+    }
+
+    public String getPackageName() {
+        return packageName;
+    }
+
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
+    }
+
+    public String getThreadId() {
+        return threadId;
+    }
+
+    public void setThreadId(String threadId) {
+        this.threadId = threadId;
+    }
+
+    public String getCallerInstance() {
+        return callerInstance;
+    }
+
+    public void setCallerInstance(String callerInstance) {
+        this.callerInstance = callerInstance;
+    }
+
+    public String getCallerMethod() {
+        return callerMethod;
+    }
+
+    public void setCallerMethod(String callerMethod) {
+        this.callerMethod = callerMethod;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getMethodId() {
+        return methodId;
+    }
+
+    public void setMethodId(String methodId) {
+        this.methodId = methodId;
+    }
     
 }
