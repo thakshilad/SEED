@@ -25,14 +25,18 @@ app.inputFormat=2
 app.outputFormat=2
 
 # SW log related attributes
-# Sample software log : traceId:TRACE-0001, sessionId:SESSION-001, userId:USER-01, methodName:placeOrder, timestamp:2024-06-01T10:00:00.000Z, transactionType:START, methodId:M001, instance:0x4C2581, returnType:void, inputParameters:OrderRequest, isConstructor:false, nested:true, depth:0, callingOrder:1, sourceLocation:OrderController.java:24, packageName:com.example.order, threadId:thread-1
+
+note - Sample software log : traceId:TRACE-0001, sessionId:SESSION-001, userId:USER-01, methodName:placeOrder, timestamp:2024-06-01T10:00:00.000Z, transactionType:START, methodId:M001, instance:0x4C2581, returnType:void, inputParameters:OrderRequest, isConstructor:false, nested:true, depth:0, callingOrder:1, sourceLocation:OrderController.java:24, packageName:com.example.order, threadId:thread-1
+
 # log.delimter - delimter between two properties
 log.delimiter = ,
+
 # log.propertyDelimiter - delimiter between property and value
 log.propertyDelimiter = :
 
 # log mapping starts
-# name of below properties can be differnt in software logs. Hence mapping has defined to identify which software log name maps to property
+note - name of below properties can be differnt in software logs. Hence mapping has defined to identify which software log name maps to property
+
 traceId=traceId
 sessionId=sessionId
 userId=userId
