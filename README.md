@@ -37,25 +37,25 @@ log.propertyDelimiter = :
 # log mapping starts
 note - name of below properties can be differnt in software logs. Hence mapping has defined to identify which software log name maps to property
 
-traceId=traceId
-sessionId=sessionId
-userId=userId
-methodName=methodName
-timestamp=timestamp
-transactionType=transactionType
-methodId=methodId
-instance=instance
-returnType=returnType
-inputParameters=inputParameters
-isConstructor=isConstructor
-nested=nested
-depth=depth
-callingOrder=callingOrder
-sourceLocation=sourceLocation
-packageName=packageName
-threadId=threadId
-callerMethod=callerMethod
-callerInstance=callerInstance
-duration=duration
+traceId=traceId  
+sessionId=sessionId  
+userId=userId  
+methodName=methodName  
+timestamp=timestamp  
+transactionType=transactionType  
+methodId=methodId  
+instance=instance  
+returnType=returnType  
+inputParameters=inputParameters  
+isConstructor=isConstructor  
+nested=nested  
+depth=depth  
+callingOrder=callingOrder  
+sourceLocation=sourceLocation  
+packageName=packageName  
+threadId=threadId  
+callerMethod=callerMethod  
+callerInstance=callerInstance  
+duration=duration  
 # log mapping ends
 
